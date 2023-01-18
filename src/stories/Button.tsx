@@ -1,7 +1,8 @@
-import React from 'react';
-import './button.css';
+/** @jsxImportSource @emotion/react */
 
-interface ButtonProps {
+import { buttonStyle } from './Button.style';
+
+export interface ButtonProps {
   /**
    * Is this the principal call to action on the page?
    */
@@ -34,12 +35,10 @@ export const Button = ({
   label,
   ...props
 }: ButtonProps) => {
-  const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
   return (
     <button
       type="button"
-      className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
-      style={{ backgroundColor }}
+      css={[buttonStyle({ primary, size, backgroundColor })]}
       {...props}
     >
       {label}
