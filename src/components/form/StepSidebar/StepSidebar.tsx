@@ -7,8 +7,8 @@ import Step from '../step/Step';
 
 import useWindowSize from '../../../hooks/useWindowSize';
 
-import DESKTOP_SIDEBARSVG from '../../../../assets/images/bg-sidebar-desktop.svg';
-import MOBILE_SIDEBARSVG from '../../../../assets/images/bg-sidebar-mobile.svg';
+import DESKTOP_SIDEBARSVG from '../../../assets/images/bg-sidebar-desktop.svg';
+import MOBILE_SIDEBARSVG from '../../../assets/images/bg-sidebar-mobile.svg';
 
 export interface IStepTextProps {
   stepNumber: number;
