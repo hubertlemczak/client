@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 
 import { css } from '@emotion/react';
-import { ErrorMessage, Field } from 'formik';
+import { Field } from 'formik';
 import ErrorField from '../ErrorField/ErrorField';
 
 interface ITextFieldProps {
