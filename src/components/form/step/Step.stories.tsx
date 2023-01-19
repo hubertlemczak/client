@@ -1,6 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import Step from './index';
+import Step from './Step';
 
 export default {
   title: 'Form/Step',

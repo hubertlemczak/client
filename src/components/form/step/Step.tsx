@@ -15,6 +15,8 @@ const stepStyle = css({
   display: 'flex',
   alignItems: 'center',
   gap: 20,
+  width: 'fit-content',
+  cursor: 'pointer',
 
   marginBottom: 30,
 });
