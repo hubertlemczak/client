@@ -22,6 +22,7 @@ interface IProps {
 const stepSidebarStyle = css({
   position: 'relative',
   padding: 40,
+  zIndex: 0,
 
   maxWidth: 274,
   maxHeight: 568,
@@ -39,7 +40,7 @@ const stepSidebarStyle = css({
   img: {
     position: 'absolute',
     inset: 0,
-    zIndex: -1,
+    zIndex: '-1',
   },
 });
 

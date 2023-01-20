@@ -4,17 +4,17 @@ import { css } from '@emotion/react';
 import { Field } from 'formik';
 import ErrorField from '../ErrorField/ErrorField';
 
-interface ITextFieldProps {
+interface ISelectFieldProps {
   label?: {
     name: string;
     id: string;
   };
-  as?: string;
+  options: { value: string; label: string }[];
   name: string;
   [key: string]: any;
 }
 
-const textFieldStyle = css({
+const selectFieldStyle = css({
   padding: 12,
   fontWeight: 'bold',
   fontSize: 15,
@@ -29,7 +29,7 @@ const textFieldStyle = css({
   },
 });
 
-const textFieldContainer = css({
+const selectFieldContainer = css({
   maxWidth: 450,
   marginBottom: 20,
   label: {
@@ -46,16 +46,29 @@ const textFieldContainer = css({
   },
 });
 
-const TextField = ({ name, label, ...props }: ITextFieldProps) => {
+const SelectField = ({ name, label, options, ...props }: ISelectFieldProps) => {
   return (
-    <div css={textFieldContainer}>
+    <div css={selectFieldContainer}>
       <div>
         {label && <label htmlFor={label.id}>{label.name}</label>}
         <ErrorField name={name} />
       </div>
-      <Field name={name} css={textFieldStyle} id={label?.id} {...props} />
+      <Field
+        name={name}
+        css={selectFieldStyle}
+        id={label?.id}
+        as="select"
+        {...props}
+      >
+        <option value="" disabled></option>
+        {options.map(option => (
+          <option key={option.value} value={option.value}>
+            {option.label}
+          </option>
+        ))}
+      </Field>
     </div>
   );
 };
 
-export default TextField;
+export default SelectField;

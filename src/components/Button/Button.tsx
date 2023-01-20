@@ -6,9 +6,11 @@ interface IProps {
   label: string;
 
   buttonCustomStyle?: SerializedStyles;
+  [key: string]: any;
 }
 
 const buttonStyle = css({
+  display: 'block',
   color: 'white',
   backgroundColor: '#03285A',
 
@@ -33,8 +35,12 @@ const buttonStyle = css({
   },
 });
 
-const Button = ({ label, buttonCustomStyle }: IProps) => {
-  return <button css={[buttonStyle, buttonCustomStyle]}>{label}</button>;
+const Button = ({ label, buttonCustomStyle, ...props }: IProps) => {
+  return (
+    <button css={[buttonStyle, buttonCustomStyle]} {...props}>
+      {label}
+    </button>
+  );
 };
 
 export default Button;
